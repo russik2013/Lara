@@ -19,3 +19,5 @@ Route::resource('russik', 'RussikController');
 
 Route::get('check/index', 'CheckStudentController@index');
 Route::post('check/check', 'CheckStudentController@check');
+
+Route::any('home', 'HomePageController@index');

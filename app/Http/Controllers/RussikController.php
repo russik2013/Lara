@@ -50,6 +50,7 @@ class RussikController extends Controller
 
         $add = new Repo();
         $add->fill($request->all());
+        $add->password =md5( $request->password );
         $add->save();
 
     }

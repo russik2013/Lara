@@ -33,9 +33,10 @@ class CheckStudentController extends Controller
 
         if(!$item->isEmpty()){
             return redirect('home');
+        }else{
+            return view ('student/check',['error' => 'Не верные данные']);
         }
-        else
-            return back('error');
+
     }
 
     /**
