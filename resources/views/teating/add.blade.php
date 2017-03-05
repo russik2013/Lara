@@ -10,7 +10,7 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            color: #B0BEC5;
+
             display: table;
             font-weight: 100;
             font-family: 'Lato';
@@ -21,7 +21,10 @@
             display: table-cell;
             vertical-align: middle;
         }
-
+        .alert {
+            color: #000000;
+            font-weight: 600;
+        }
         .content {
             text-align: center;
             display: inline-block;
@@ -39,8 +42,18 @@
 </head>
 <body>
 
+
+
 <div class="row-">
     <div class="col-nd-12">
+
+        @if(count($errors)>0)
+            @foreach($errors->all() as $error)
+           <p class="alert">     {{$error}} </p>
+                @endforeach
+        @endif
+
+
         <form action="{{ url('/test') }}" class="form-horizontal" method="post" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" name="_method" value="POST">
@@ -50,7 +63,14 @@
                 <div class="controls col-md-6">
                     <input maxlength="250" type="text" class="form-control" name="title" id="title" value="{{ old('title') }}"/>
                 </div>
+            </div >
 
+            <div class="form-group">
+                <label for="number" class="control-label col-md-2 required">Введите номер</label>
+                <div class="controls col-md-6">
+                    <input maxlength="250" type="text" class="form-control" name="number" id="number" value="{{ old('number') }}"/>
+                </div>
+            </div >
 
             <div class="form-group">
                 <div class="col-md-offset-2">

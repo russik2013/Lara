@@ -136,7 +136,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Pingpong\Modules\ModulesServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -145,7 +145,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Pingpong\Modules\ModulesServiceProvider::class,
+
     ],
 
     /*

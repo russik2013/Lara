@@ -38,11 +38,23 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-       // dd($request);
-        
+
+      $vadate = [
+          'title' => 'required',
+          'number' => 'required|numeric'
+      ];
+        $this->validate($request,$vadate);
+        dd($request);
         $add = new Repo();
         $add->fill($request->all());
         $add->save();
+    }
+
+    public function messages()
+    {
+        return [
+            'title' => 'Необходимо указать заголовок',
+        ];
     }
 
     /**

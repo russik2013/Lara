@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('russik', 'RussikController');
+Route::resource('test', 'TestController');
 
 Route::get('check/index', 'CheckStudentController@index');
 Route::post('check/check', 'CheckStudentController@check');
